@@ -13,7 +13,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.geektech.apple1group39.databinding.FragmentNewsBinding;
-import com.geektech.apple1group39.models.News;
+import com.geektech.apple1group39.ui.App;
+import com.geektech.apple1group39.ui.models.News;
 
 
 public class NewsFragment extends Fragment {
@@ -41,8 +42,9 @@ public class NewsFragment extends Fragment {
 
     private void save() {
         String title = binding.editText.getText().toString();
-        News news = new News(title,System.currentTimeMillis());
+        News news = new News(title,"kmjgt");
         Bundle bundle = new Bundle();
+        App.getAppDataBase().newsDao().insert(news);
         bundle.putSerializable("news", news);
         getParentFragmentManager().setFragmentResult("rk_news", bundle);
         close();

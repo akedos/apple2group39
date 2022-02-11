@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
    android:gravity="center|top"
+    android:orientation="vertical"
     tools:context=".ProfileFragment">
 
     <ImageView
@@ -12,4 +13,10 @@
         android:layout_width="200dp"
         android:layout_height="200dp" />
 
+    <EditText
+        android:id="@+id/et_name"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+
+        />
 </LinearLayout>
